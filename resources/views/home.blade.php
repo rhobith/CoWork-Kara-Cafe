@@ -8,6 +8,9 @@
     <title>CSKC | Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.2.0/dist/css/coreui.min.css" rel="stylesheet"
+        integrity="sha384-UkVD+zxJKGsZP3s/JuRzapi4dQrDDuEf/kHphzg8P3v8wuQ6m9RLjTkPGeFcglQU" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet">
     <style>
         .form-control {
             background-color: #FC7D08;
@@ -23,7 +26,7 @@
 <body style="background-color: #2F2A2A">
 
     <head>
-        <div class="container-fluid text-center bg-image h-fit"
+        <div class="container-fluid text-center bg-image"
             style="
       background-image: url('img/Latte_and_dark_coffee.jpg');
       background-size: cover;
@@ -47,11 +50,15 @@
             pekerjaan. Untuk pemesanan co-working space terdapat minimal order, yaitu dua puluh ribu untuk setiap orang.
             Fasilitas yang disediakan pada co-working space adalah meja, kursi, ac, dan WI-FI.</p>
     </div>
-
+    <div class="row justify-content-center">
+        <div class="col-11">
+            <hr>
+        </div>
+    </div>
     <div class="container">
         <div class="row justify-content-center text-light">
             <h1 class="col-8 text-center mt-5 mb-4">Peminjaman Coworking Space</h1>
-            <form action="" method="post" class="col-8">
+            <form action="/menu" method="post" class="col-8">
                 <div class="mb-3">
                     <input type="text" class="form-control" id="nama" placeholder="Nama">
                 </div>
@@ -79,6 +86,20 @@
 
         </div>
     </div>
+
+    {{-- <div class="container-fluid" style="background-color: #FC7D08">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col">
+                <i class="cib-whatsapp"></i>
+                <p>0858-6593-0419</p>
+                <i class="cib-instagram"></i>
+                <p>@rhobith</p>
+            </div>
+        </div>
+    </div> --}}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
