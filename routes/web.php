@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PelangganController;
+use App\Models\Menu;
+use App\Models\Order;
+use App\Models\Pelanggan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +20,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Get Page
+Route::get('/', [OrderController::class,'index']);
 
-Route::get('/menu', function () {
-    return view('menu');
-});
+Route::get('/menu', [MenuController::class, 'index']);
 
 Route::get('/info', function () {
-    return view('info');
+   $pelanggan = Pelanggan::all()->last()->get(); 
+    return view('info',[
+        'title' => 'Information',
+        'order' => Order::where('pelanggan_id',$pelanggan[0]->id)->get(),
+        'menu' => Menu::all()
+    ]);
 });
+
+Route::get('/login', function () {
+    return view('login',[
+        'title' => 'Login'
+    ]);
+});
+
+Route::get('/verifikasi', function () {
+    return view('verifikasi',[
+         'title' => 'Verifikasi',
+         'pelanggan' => Pelanggan::all()
+    ]);
+});
+
+// Store Data
+Route::post('/', [PelangganController::class, 'store']);
+Route::post('/login', [PegawaiController::class, 'authenticate']);
+Route::post('/menu', [OrderController::class, 'store']);
+Route::post('/info', [OrderController::class, 'update']);
